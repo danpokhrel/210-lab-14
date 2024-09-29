@@ -6,6 +6,7 @@
 using namespace std;
 
 const int COUNT = 5;
+const int COLOR_MAX = 255;
 
 class Color {
 private:
@@ -23,17 +24,32 @@ public:
 
     // Formatted Output
     void print() {
-        cout << "Color: " << (int)red << "r | " << (int)green << "g | " << (int)blue << "b\n";
+        cout << left;
+        cout << "r:" << setw(3) << (int)red << " | ";
+        cout << "g:" << setw(3) << (int)green << " | ";
+        cout << "b:" << setw(3) <<(int)blue << "\n";
     }
 };
 
 int main(){
     vector<Color> colors;
 
+    // Genereate Data
     for (int i = 0; i < COUNT; i++){
         Color tmp;
-        tmp.setRed(rand()%255);
+        tmp.setRed(rand()%COLOR_MAX);
+        tmp.setGreen(rand()%COLOR_MAX);
+        tmp.setBlue(rand()%COLOR_MAX);
+        colors.push_back(tmp);
     }
+
+    cout << "Outputing Color Values:\n";
+
+    // Print Data
+    for (Color color : colors){
+        color.print();
+    }
+
 
     return 0;
 }
