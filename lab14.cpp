@@ -5,29 +5,29 @@
 #include <cstdlib>
 using namespace std;
 
-const int COUNT = 5;
-const int COLOR_MAX = 255;
+const int COUNT = 5; // Number of colors to be generated
+const int COLOR_MAX = 255; // Max value of a color channel
 
 class Color {
 private:
-    unsigned char red;
-    unsigned char green;
-    unsigned char blue;
+    int red;
+    int green;
+    int blue;
 public:
     // Getters and Setters
-    unsigned char getRed() const {return red;}
-    void setRed(unsigned char r) {red = r;}
-    unsigned char getGreen() const {return green;}
-    void setGreen(unsigned char g)  {green = g;}
-    unsigned char getBlue() const {return blue;}
-    void setBlue(unsigned char b) {blue = b;}
+    int getRed() const {return red;}
+    void setRed(int r) {red = r;}
+    int getGreen() const {return green;}
+    void setGreen(int g)  {green = g;}
+    int getBlue() const {return blue;}
+    void setBlue(int b) {blue = b;}
 
     // Formatted Output
     void print() {
         cout << left;
-        cout << "r:" << setw(3) << (int)red << " | ";
-        cout << "g:" << setw(3) << (int)green << " | ";
-        cout << "b:" << setw(3) <<(int)blue << "\n";
+        cout << "r:" << setw(3) << red << " | ";
+        cout << "g:" << setw(3) << green << " | ";
+        cout << "b:" << setw(3) << blue << "\n";
     }
 };
 
@@ -49,7 +49,6 @@ int main(){
     for (Color color : colors){
         color.print();
     }
-
 
     return 0;
 }
